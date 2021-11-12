@@ -1,87 +1,38 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React, {useState} from 'react';
+// import {View} from 'react-native';
+// import Screens from './src/model/Screens';
+// import Game from './src/pages/Game';
+import MainMenu from './src/pages/MainMenu';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Game from './src/pages/Game';
 
-import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import Elements from './src/components/Elements';
-import PlayerControls from './src/components/PlayerControls';
-import PlayerOverview from './src/components/PlayerOverview';
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Elements />
-      <PlayerControls
-        player={{
-          Name: 'John Doe',
-          AttackBonus: 0,
-          Experience: 0,
-          Effects: [],
-          Health: 9,
-          MaxHealth: 9,
-          Icon: '🎉',
-          Shield: 0,
-          Vengeance: 0,
-          VengeanceRange: 0,
-        }}
-      />
-      <PlayerOverview
-        player={{
-          Name: 'Spieler 1',
-          AttackBonus: 0,
-          Experience: 0,
-          Effects: [],
-          Health: 9,
-          MaxHealth: 9,
-          Icon: '🎉',
-          Shield: 0,
-          Vengeance: 0,
-          VengeanceRange: 0,
-        }}
-      />
-      <PlayerOverview 
-        player={{
-          Name: 'Spieler 2',
-          AttackBonus: 0,
-          Experience: 0,
-          Effects: [],
-          Health: 9,
-          MaxHealth: 9,
-          Icon: '🎉',
-          Shield: 0,
-          Vengeance: 0,
-          VengeanceRange: 0,
-        }}
-      />
-      <PlayerOverview 
-        player={{
-          Name: 'Spieler 3',
-          AttackBonus: 0,
-          Experience: 0,
-          Effects: [],
-          Health: 9,
-          MaxHealth: 9,
-          Icon: '🎉',
-          Shield: 0,
-          Vengeance: 0,
-          VengeanceRange: 0,
-        }}
-      />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={MainMenu}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Game"
+          component={Game}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+  // switch (screen) {
+  //   case Screens.MainMenu:
+  //     return <MainMenu onJoinGame={() => changeScreen(Screens.Game)} />;
+  //   case Screens.Game:
+  //     return <Game />;
+  // }
+};
 
 export default App;
