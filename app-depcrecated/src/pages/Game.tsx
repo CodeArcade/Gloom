@@ -33,6 +33,7 @@ const Game = ({navigation}: props) => {
       <Elements />
       <PlayerControls
         player={{
+          Id: "asfh",
           Name: 'John Doe',
           AttackBonus: 0,
           Experience: 0,
@@ -47,6 +48,7 @@ const Game = ({navigation}: props) => {
       />
       <PlayerOverview
         player={{
+          Id: "das",
           Name: 'Spieler 1',
           AttackBonus: 1,
           Experience: 0,
@@ -61,6 +63,7 @@ const Game = ({navigation}: props) => {
       />
       <PlayerOverview
         player={{
+          Id: "dasasf",
           Name: 'Spieler 2',
           AttackBonus: 0,
           Experience: 0,
@@ -75,6 +78,7 @@ const Game = ({navigation}: props) => {
       />
       <PlayerOverview
         player={{
+          Id: "dasaslkdhgbj",
           Name: 'Spieler 3',
           AttackBonus: 0,
           Experience: 0,

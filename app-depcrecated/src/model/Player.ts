@@ -1,7 +1,7 @@
 import Effect from "./Effect";
 
 export default interface Player {
-  SocketId: string;
+  SocketId?: string;
   Id: string;  
   Name: string;
   Icon: string;
