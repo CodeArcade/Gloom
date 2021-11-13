@@ -30,7 +30,7 @@ export default function PlayerOverview({player}: PlayerOverviewProps) {
             <OverviewStatBlock icon="🛡️" value={player.Shield} />
           </View>
         </View>
-        <View style={styles.smallStatContainer}>
+        <View style={styles.effectContainer}>
           <Text>Effekt!</Text>
           <Text>Effekt!</Text>
           <Text>Effekt!</Text>
@@ -72,5 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     flexWrap: 'wrap',
+  },
+  effectContainer: {
+    flex: 2,
+    flexWrap: "wrap",
+    flexDirection: "column"
   }
 });
