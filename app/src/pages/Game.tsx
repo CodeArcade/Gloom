@@ -4,8 +4,9 @@ import {View, StyleSheet, BackHandler, Alert} from 'react-native';
 import Elements from '../components/Elements';
 import PlayerControls from '../components/PlayerControls';
 import PlayerOverview from '../components/PlayerOverview';
+import ParamList from '../model/props';
 
-type props = NativeStackScreenProps<{Home: undefined; Game: undefined}, 'Home'>;
+type props = NativeStackScreenProps<ParamList, 'Home'>;
 
 const Game = ({navigation}: props) => {
   useEffect(() => {

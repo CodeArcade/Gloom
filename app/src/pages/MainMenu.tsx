@@ -1,8 +1,9 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
 import {Button, View, StyleSheet} from 'react-native';
+import ParamList from '../model/props';
 
-type props = NativeStackScreenProps<{Home: undefined; Game: undefined}, 'Home'>;
+type props = NativeStackScreenProps<ParamList, 'Home'>;
 
 export default function MainMenu({navigation}: props) {
   return (
@@ -10,7 +11,7 @@ export default function MainMenu({navigation}: props) {
       <Button
         title="Join Game"
         onPress={() => {
-          navigation.navigate('Game');
+          navigation.navigate('Game', {});
         }}
       />
     </View>
