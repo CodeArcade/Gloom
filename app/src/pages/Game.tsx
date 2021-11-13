@@ -51,7 +51,7 @@ const Game = ({navigation}: props) => {
           Experience: 0,
           Effects: [],
           Health: 12,
-          MaxHealth: 9,
+          MaxHealth: 15,
           Icon: '🎈',
           Shield: 0,
           Vengeance: 0,

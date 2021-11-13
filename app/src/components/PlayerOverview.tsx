@@ -20,7 +20,7 @@ export default function PlayerOverview({player}: PlayerOverviewProps) {
         </View>
         <View style={styles.statContainer}>
           <View style={styles.smallStatContainer}>
-            <OverviewStatBlock icon="🩸" value={player.Health} />
+            <OverviewStatBlock icon="🩸" value={`${player.Health} / ${player.MaxHealth}`} />
             <OverviewStatBlock icon="🌟" value={player.Experience} />
             <OverviewStatBlock
               icon="⚔️"
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
   statContainer: {
-    flex: 3,
+    flex: 4,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
