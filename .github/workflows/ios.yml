@@ -1,0 +1,41 @@
+name: iOS build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      
+      - name: Install node dependencies
+        run: npm ci
+      - run: xcode-select -p
+      - name: Install pod dependencies
+        run: pod install
+        working-directory: ./app/ios
+        
+      - name: Build iOS (debug)
+        run: |
+          xcodebuild \
+          -project ios/app.xcodeproj \
+          -scheme app \
+          clean archive \
+          -sdk iphoneos \
+          -configuration Debug \
+          -UseModernBuildSystem=NO \
+          -archivePath $PWD/build \
+          CODE_SIGNING_ALLOWED=NO
+          
+        
