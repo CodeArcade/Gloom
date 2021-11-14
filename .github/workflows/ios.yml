@@ -26,3 +26,8 @@ jobs:
         run: pod install
       - name: Build with react native cli
         run: npx react-native run-ios --configuration=release
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: App file
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphonesimulator/app.app
