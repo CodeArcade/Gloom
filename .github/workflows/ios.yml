@@ -21,21 +21,5 @@ jobs:
       
       - name: Install node dependencies
         run: npm ci
-      - run: xcode-select -p
-      - name: Install pod dependencies
-        run: pod install
-        working-directory: ./app/ios
-        
-      - name: Build iOS (debug)
-        run: |
-          xcodebuild \
-          -project ios/app.xcodeproj \
-          -scheme app \
-          clean archive \
-          -sdk iphoneos \
-          -configuration Debug \
-          -UseModernBuildSystem=NO \
-          -archivePath $PWD/build \
-          CODE_SIGNING_ALLOWED=NO
-          
-        
+      - name: Build with react native cli
+        run: react-native run-ios --configuration=realease
