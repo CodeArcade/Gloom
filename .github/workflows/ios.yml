@@ -21,5 +21,8 @@ jobs:
       
       - name: Install node dependencies
         run: npm ci
+      - name: Install Pod dependencies
+        working-directory: ./app/ios
+        run: pod install
       - name: Build with react native cli
-        run: npx react-native run-ios --configuration=realease
+        run: npx react-native run-ios --configuration=release
