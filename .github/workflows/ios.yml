@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: App file
-          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/app.app
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphonesimulator/app.app
