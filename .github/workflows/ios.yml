@@ -24,10 +24,14 @@ jobs:
       - name: Install Pod dependencies
         working-directory: ./app/ios
         run: pod install
-      - name: Build with react native cli
-        run: npx react-native run-ios --configuration=release
+      - name: Build App with xcode
+        working-directory: ./app/ios
+        run: |       
+          xcodebuild -workspace app.xcworkspace -scheme app archive -archivePath app.xcarchive -allowProvisioningUpdates
+          xcodebuild -exportArchive -archivePath ./app.xcarchive -exportPath . -exportOptionsPlist app/Info.plist
+          mv app.ipa /Users/runner/app.ipa
       - name: Publish artifacts
         uses: actions/upload-artifact@v2
         with:
           name: App file
-          path: /Users/runner/Library/Developer/Xcode/DerivedData/
+          path: /Users/runner/app.ipa
